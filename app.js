@@ -199,7 +199,13 @@ for (var i = 0; i < 6; i++) {
     if (i > 0) {
       alert('Nope!');
     }
-    var state = prompt('What is your guess?').toLowerCase();
+    try {
+      var state = prompt('What is your guess?').toLowerCase();
+    }
+    catch(error) {
+      console.log('error with Array game input, empty string used');
+      state = '';
+    }
     for (var j = 0; j < answersArray.length; j++) {
       console.log('j = ' + j);
       if (state === answersArray[j]) {  // if their guess was correct..

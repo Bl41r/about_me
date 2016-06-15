@@ -2,7 +2,7 @@
 
 /* these are the major sections, like Bio, Education */
 .navlinks {
-  color: brown;
+  color: #191170;
   margin-bottom: 0;
 }
 
@@ -11,8 +11,8 @@
   text-align: center;
   font-family: cursive;
   font-size: 50px;
-  color: brown;
-  background-color: orange;
+  color: #191170;
+  background-color: #AFEEEE;
   margin-top: 0;
 }
 
@@ -32,5 +32,5 @@
 }
 
 body {
-  background-color: #ADFF2F;
+  background-color: #90EE90;
 }
