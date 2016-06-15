@@ -1,9 +1,26 @@
+/* Very crude at the  moment, trying to implement what I have made on paper */
+
+/* these are the major sections, like Bio, Education */
 .navlinks {
-  color: red;
+  color: #FF9900;
+  margin-bottom: 0;
 }
 
+/* this is the 'About Me' title */
 #title {
   text-align: center;
   font-family: cursive;
   font-size: 50px;
+  color: brown;
+  background-color: orange;
+  margin-top: 0;
+}
+
+/* This is for the information for each heading */
+.info {
+  margin: 0;
+}
+
+body {
+  background-color: green;
 }
