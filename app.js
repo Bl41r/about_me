@@ -1,4 +1,6 @@
-/* This is the js file for my week1 201 lab 'about me' created on 6/14/16 */
+// This is the js file for my week1 201 lab 'about me' created on 6/14/16
+// This app plays a game with a series of questions, a number guessing game,
+// and a question with multiple correct answers stored into an array
 
 'use strict';
 
@@ -186,23 +188,26 @@ var answersArray = ['nc', 'il', 'north carolina', 'illinois'];
 var arrayCorrect = 0;
 alert('Let\'s play another game.  You guess what other state I have lived in.');
 for (var i = 0; i < 6; i++) {
+  console.log('i = ' + i);
   if (arrayCorrect === 1) {
     break;
   } else {
     var state = prompt('What is your guess?').toLowerCase();
     for (var j = 0; j < answersArray.length; j++) {
+      console.log('j = ' + j);
       if (state === answersArray[j]) {
         tally++;
         alert('Nice Work!');
         arrayCorrect = 1;
+        break;
       }
     }
   }
 }
 
-console.log('array correct? ' + arrayCorrect);
-console.log('tally is' + tally);
-console.log('final tally: ' + tally.toString() + ' out of 7');
+console.log('was array question correct? ' + arrayCorrect);
+console.log('tally is now ' + tally);
+console.log('ze final tally: ' + tally.toString() + ' out of 7');
 if (tally > 2) {
   alert('You got ' + tally + ' out of 7 correct.  Nice work, ' + userName + '.');
 } else if (tally > 0){
