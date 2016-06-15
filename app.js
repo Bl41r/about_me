@@ -57,8 +57,8 @@ function playGuessingGameCF(num) {
     alert('You lost.');
   }
 }
-// This recursive function is for the guessing game.  testNum is the guess number, attempt is which attempt the user is on.
-
+// This recursive function is for the guessing game.
+// testNum is the guess number, attempt is which attempt the user is on.
 function playGuessingGameR(testNum, attempt) {
   if (attempt >= 5) {
     alert('You are out of guesses.  So sorry.  I was looking for the number ' + testNum + '.');
@@ -89,6 +89,7 @@ function playGuessingGameR(testNum, attempt) {
   }
 }
 
+// Let's get their name
 var userName = prompt('Identify yourself, human.');
 if (userName == null || userName === '') {
   //used == in case of undefined type since null == undefined is true
@@ -97,6 +98,7 @@ if (userName == null || userName === '') {
 alert('Greetings, ' + userName + '.  Welcome to David\'s about me page');
 console.log('userName: ' + userName.toString());
 
+// This is where the initial questions begin
 try {
   var answer1 = prompt('Does David have a dog?').toLowerCase();
 }
@@ -184,26 +186,35 @@ playGuessingGameR(19,1);  // This is the recursive func method of the game
 //playGuessingGameCF(19);     // This uses a do..while loops to control flow instead
 
 // Array question
+// This uses a nested for loop, the i-loop for the 6 guesses, and
+// the j-loop for checking against each element in the array
 var answersArray = ['nc', 'il', 'north carolina', 'illinois'];
-var arrayCorrect = 0;
+var arrayCorrect = false; //If they guess correctly, goes to value of 1
 alert('Let\'s play another game.  You guess what other state I have lived in.');
 for (var i = 0; i < 6; i++) {
   console.log('i = ' + i);
-  if (arrayCorrect === 1) {
-    break;
+  if (arrayCorrect === true) {
+    break; // Breaks from 'i-loop' if they got it right.
   } else {
     var state = prompt('What is your guess?').toLowerCase();
     for (var j = 0; j < answersArray.length; j++) {
       console.log('j = ' + j);
-      if (state === answersArray[j]) {
+      if (state === answersArray[j]) {  // if their guess was correct..
         tally++;
         alert('Nice Work!');
-        arrayCorrect = 1;
-        break;
+        arrayCorrect = true;
+        break; // Breaks from 'j-loop'
       }
     }
   }
 }
+var answerString = '';
+for (var k = 0; k < answersArray.length - 1; k++) {
+  answerString += answersArray[k] + ', ';
+}
+answerString += answersArray[answersArray.length - 1];
+
+alert('Possible answers were: ' + answerString);
 
 console.log('was array question correct? ' + arrayCorrect);
 console.log('tally is now ' + tally);
