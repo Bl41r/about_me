@@ -208,6 +208,7 @@ for (var i = 0; i < 6; i++) {
     }
   }
 }
+// This little do-da put the answersArray elements into a nice string separated by commas
 var answerString = '';
 for (var k = 0; k < answersArray.length - 1; k++) {
   answerString += answersArray[k] + ', ';
@@ -219,6 +220,7 @@ alert('Possible answers were: ' + answerString);
 console.log('was array question correct? ' + arrayCorrect);
 console.log('tally is now ' + tally);
 console.log('ze final tally: ' + tally.toString() + ' out of 7');
+
 if (tally > 2) {
   alert('You got ' + tally + ' out of 7 correct.  Nice work, ' + userName + '.');
 } else if (tally > 0){
