@@ -5,7 +5,7 @@
 var userName = prompt('Identify yourself, human.');
 if (userName == null || userName === '') {
   //used == in case of undefined type since null == undefined is true
-  userName = 'Mr/Ms too-cool-to-enter-a-name';
+  userName = 'Mr./Ms. too-cool-to-enter-a-name';
 }
 alert('Greetings, ' + userName + '.  Welcome to David\'s about me page');
 console.log('userName: ' + userName.toString());
@@ -25,7 +25,7 @@ if ((answer1 === 'no') || (answer1 === 'no.') || (answer1 === 'n')) {
   tally++;
   console.log('user entered: ' + answer1 + ', answer1 CORRECT, tally = ' + tally.toString());
 } else {
-  alert('Incorrect.  David has no dogs at this time.');
+  alert('Incorrect.  David has no dogs at this time, but would like one when he owns a house with a yard.');
   console.log('user entered: ' + answer1 + ', answer1 incorrect, tally is ' + tally.toString());
 }
 
@@ -69,11 +69,11 @@ catch(error) {
   console.log('error, answer4 set to empty string');
 }
 if ((answer4 === 'no') || (answer4 === 'no.') || (answer4 === 'n')) {
-  alert('Correct.  David prefers windows or even Linux.');
+  alert('Correct.  David prefers Windows or even Linux.');
   tally++;
   console.log('user entered: ' + answer4 + ', answer4 CORRECT, tally = ' + tally.toString());
 } else {
-  alert('Incorrect.  David does not enjoy using a macintosh.');
+  alert('Incorrect.  David does not enjoy using a Macintosh.');
   console.log('user entered: ' + answer4 + ', answer4 incorrect, tally unchanged.');
 }
 
