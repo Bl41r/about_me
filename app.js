@@ -20,7 +20,7 @@ catch(error) {
   console.log('error, answer1 set to empty string');
 }
 
-if (answer1 === 'no' || answer1 === 'no.' || answer1 === 'n') {
+if ((answer1 === 'no') || (answer1 === 'no.') || (answer1 === 'n')) {
   alert('Correct.');
   tally++;
   console.log('user entered: ' + answer1 + ', answer1 CORRECT, tally = ' + tally.toString());
@@ -36,7 +36,7 @@ catch(error) {
   answer2 = '';
   console.log('error, answer2 set to empty string');
 }
-if (answer2 === 'yes' || answer2 === 'yes.' || answer2 === 'y') {
+if ((answer2 === 'yes') || (answer2 === 'yes.') || (answer2 === 'y')) {
   alert('Correct.  David plays guitar.');
   tally++;
   console.log('user entered: ' + answer2 + ', answer2 CORRECT, tally = ' + tally.toString());
@@ -52,7 +52,7 @@ catch(error) {
   answer3 = '';
   console.log('error, answer3 set to empty string');
 }
-if (answer3 === 'no' || answer3 === 'no.' || answer3 === 'n') {
+if ((answer3 === 'no') || (answer3 === 'no.') || (answer3 === 'n')) {
   alert('Correct.');
   tally++;
   console.log('user entered: ' + answer3 + ', answer3 CORRECT, tally = ' + tally.toString());
@@ -68,7 +68,7 @@ catch(error) {
   answer4 = '';
   console.log('error, answer4 set to empty string');
 }
-if (answer4 === 'no' || answer4 === 'no.' || answer4 === 'n') {
+if ((answer4 === 'no') || (answer4 === 'no.') || (answer4 === 'n')) {
   alert('Correct.  David prefers windows or even Linux.');
   tally++;
   console.log('user entered: ' + answer4 + ', answer4 CORRECT, tally = ' + tally.toString());
@@ -84,7 +84,7 @@ catch(error) {
   answer5 = '';
   console.log('error, answer5 set to empty string');
 }
-if (answer5 === 'yes' || answer5 === 'yes.' || answer5 === 'y') {
+if ((answer5 === 'yes') || (answer5 === 'yes.') || (answer5 === 'y')) {
   alert('Correct.');
   tally++;
   console.log('user entered: ' + answer5 + ', answer5 CORRECT, tally = ' + tally.toString());
@@ -98,7 +98,7 @@ console.log('final tally: ' + tally.toString() + ' out of 5');
 if (tally > 2) {
   alert('You got ' + tally + ' out of 5 correct.  Nice work, ' + userName + '.');
 } else if (tally > 0){
-  alert('You only got ' + tally + ' out of 5.  Probably not your best work, ' + userName + '.');
+  alert('You only got ' + tally + ' out of 5.  Boo, ' + userName + '.');
 } else {
   alert('You did not get a single question correct.  Either you did this on purpose, or you have awesomely terrible luck!');
 }
