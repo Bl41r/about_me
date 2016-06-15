@@ -1,6 +1,87 @@
-/* This is the js file for my day2 201 lab 'about me' created on 6/14/16 */
+/* This is the js file for my week1 201 lab 'about me' created on 6/14/16 */
 
 'use strict';
+
+//simple comparison function, returns 'equal', 'less', 'greater', 'error'
+function cmpNumbers(num1, num2) {
+  if (num1 === num2) {
+    return 'equal';
+  } else if (num1 > num2) {
+    return 'greater';
+  } else if (num1 < num2) {
+    return 'less';
+  } else {
+    return 'error';
+  }
+}
+
+//This function uses control flow (CF), rather than a recursive function to play the guessing game
+function playGuessingGameCF(num) {
+  console.log('game started.');
+  var attempt = 1;
+  do {
+    try {
+      var guess = parseInt(prompt('What is your guess?'));
+    }
+    catch(error) {
+      guess = '';
+      console.log('error, guess set to empty string');
+    }
+    var msg = cmpNumbers(guess, num);
+    console.log('msg is ' + msg);
+    if (msg === 'equal') {
+      alert('Great, kid!  Don\'t get cocky.');
+      attempt = 100;
+      console.log('win');
+    } else if (msg === 'less') {
+      alert('Incorrect.  Too low.');
+      attempt++;
+      console.log('low');
+    } else if (msg === 'greater') {
+      alert('Incorrect, too high.');
+      attempt++;
+      console.log('high');
+    } else {
+      alert('No.');
+      attempt++;
+      console.log('Strange input.');
+    }
+  }
+  while (attempt <= 4);
+  if (attempt !== 100) {
+    alert('You lost.');
+  }
+}
+// This recursive function is for the guessing game.  testNum is the guess number, attempt is which attempt the user is on.
+
+function playGuessingGameR(testNum, attempt) {
+  if (attempt >= 5) {
+    alert('You are out of guesses.  So sorry.  I was looking for the number ' + testNum + '.');
+    return;
+  } else try {
+    var guess = prompt('What is your guess?');
+  }
+  catch(error) {
+    guess = '';
+    console.log('error, guess set to empty string');
+  }
+
+  if (guess === testNum.toString()) {
+    alert('Noiceburgers with awesome sauce!');
+  } else if (guess > testNum) {
+    attempt++;
+    alert('You\'re a bit high.');
+    playGuessingGameR(testNum, attempt);
+  } else if (guess < testNum) {
+    attempt++;
+    alert('You\'re a bit low.');
+    playGuessingGameR(testNum, attempt);
+  } else {
+    attempt++;
+    alert('That was a strange guess.  Not it. Try again.');
+    playGuessingGameR(testNum, attempt);
+  }
+}
 
 var userName = prompt('Identify yourself, human.');
 if (userName == null || userName === '') {
@@ -102,3 +183,8 @@ if (tally > 2) {
 } else {
   alert('You did not get a single question correct.  Either you did this on purpose, or you have awesomely terrible luck!');
 }
+
+// This is where the guessing game begins
+alert('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
+playGuessingGameR(19,1);  // This is the recursive func method of the game
+//playGuessingGameCF(19);     // This uses a do..while loops to control flow instead
