@@ -2,6 +2,8 @@
 
 'use strict';
 
+var tally = 0;  // Global var for questions correct
+
 //simple comparison function, returns 'equal', 'less', 'greater', 'error'
 function cmpNumbers(num1, num2) {
   if (num1 === num2) {
@@ -31,6 +33,7 @@ function playGuessingGameCF(num) {
     console.log('msg is ' + msg);
     if (msg === 'equal') {
       alert('Great, kid!  Don\'t get cocky.');
+      tally++;
       attempt = 100;
       console.log('win');
     } else if (msg === 'less') {
@@ -68,6 +71,7 @@ function playGuessingGameR(testNum, attempt) {
 
   if (guess === testNum.toString()) {
     alert('Noiceburgers with awesome sauce!');
+    tally++;
   } else if (guess > testNum) {
     attempt++;
     alert('You\'re a bit high.');
@@ -90,8 +94,6 @@ if (userName == null || userName === '') {
 }
 alert('Greetings, ' + userName + '.  Welcome to David\'s about me page');
 console.log('userName: ' + userName.toString());
-
-var tally = 0;
 
 try {
   var answer1 = prompt('Does David have a dog?').toLowerCase();
@@ -174,17 +176,37 @@ if ((answer5 === 'yes') || (answer5 === 'yes.') || (answer5 === 'y')) {
   console.log('user entered: ' + answer5 + ', answer5 incorrect, tally unchanged.');
 }
 
-tally = tally.toString();
-console.log('final tally: ' + tally.toString() + ' out of 5');
-if (tally > 2) {
-  alert('You got ' + tally + ' out of 5 correct.  Nice work, ' + userName + '.');
-} else if (tally > 0){
-  alert('You only got ' + tally + ' out of 5.  Boo, ' + userName + '.');
-} else {
-  alert('You did not get a single question correct.  Either you did this on purpose, or you have awesomely terrible luck!');
-}
-
 // This is where the guessing game begins
 alert('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
 playGuessingGameR(19,1);  // This is the recursive func method of the game
 //playGuessingGameCF(19);     // This uses a do..while loops to control flow instead
+
+// Array question
+var answersArray = ['nc', 'il', 'north carolina', 'illinois'];
+var arrayCorrect = 0;
+alert('Let\'s play another game.  You guess what other state I have lived in.');
+for (var i = 0; i < 6; i++) {
+  if (arrayCorrect === 1) {
+    break;
+  } else {
+    var state = prompt('What is your guess?').toLowerCase();
+    for (var j = 0; j < answersArray.length; j++) {
+      if (state === answersArray[j]) {
+        tally++;
+        alert('Nice Work!');
+        arrayCorrect = 1;
+      }
+    }
+  }
+}
+
+console.log('array correct? ' + arrayCorrect);
+console.log('tally is' + tally);
+console.log('final tally: ' + tally.toString() + ' out of 7');
+if (tally > 2) {
+  alert('You got ' + tally + ' out of 7 correct.  Nice work, ' + userName + '.');
+} else if (tally > 0){
+  alert('You only got ' + tally + ' out of 7.  Boo, ' + userName + '.');
+} else {
+  alert('You did not get a single question correct.  Either you did this on purpose, or you have awesomely terrible luck!');
+}
