@@ -196,6 +196,9 @@ for (var i = 0; i < 6; i++) {
   if (arrayCorrect === true) {
     break; // Breaks from 'i-loop' if they got it right.
   } else {
+    if (i > 0) {
+      alert('Nope!');
+    }
     var state = prompt('What is your guess?').toLowerCase();
     for (var j = 0; j < answersArray.length; j++) {
       console.log('j = ' + j);
