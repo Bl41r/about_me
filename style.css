@@ -2,7 +2,7 @@
 
 /* these are the major sections, like Bio, Education */
 .navlinks {
-  color: #FF9900;
+  color: brown;
   margin-bottom: 0;
 }
 
@@ -16,11 +16,20 @@
   margin-top: 0;
 }
 
+#about_img {
+  position: absolute;
+  right: 10px;
+  max-width: 30%;
+  height: auto;
+
+}
+
 /* This is for the information for each heading */
 .info {
   margin: 0;
+  max-width: 65%;
 }
 
 body {
-  background-color: green;
+  background-color: #ADFF2F;
 }

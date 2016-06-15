@@ -5,7 +5,7 @@
 var userName = prompt('Identify yourself, human.');
 if (userName == null || userName === '') {
   //used == in case of undefined type since null == undefined is true
-  userName = 'Unnamed One';
+  userName = 'Mr/Ms too-cool-to-enter-a-name';
 }
 alert('Greetings, ' + userName + '.  Welcome to David\'s about me page');
 console.log('userName: ' + userName.toString());
@@ -94,9 +94,9 @@ if (answer5 === 'yes' || answer5 === 'yes.' || answer5 === 'y') {
 }
 
 tally = tally.toString();
-console.log('final tally: ' + tally.toString());
+console.log('final tally: ' + tally.toString() + ' out of 5');
 if (tally > 2) {
-  alert('You got ' + tally + 'out of 5 correct.  Nice work, ' + userName + '.');
+  alert('You got ' + tally + ' out of 5 correct.  Nice work, ' + userName + '.');
 } else if (tally > 0){
   alert('You only got ' + tally + ' out of 5.  Probably not your best work, ' + userName + '.');
 } else {
