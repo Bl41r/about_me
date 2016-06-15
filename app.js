@@ -19,7 +19,8 @@ function cmpNumbers(num1, num2) {
   }
 }
 
-//This function uses control flow (CF), rather than a recursive function to play the guessing game
+// This function uses control flow (CF), rather than a recursive function to play the guessing game.
+// num is the correct number you want matched.
 function playGuessingGameCF(num) {
   console.log('game started.');
   var attempt = 1;
@@ -182,8 +183,9 @@ if ((answer5 === 'yes') || (answer5 === 'yes.') || (answer5 === 'y')) {
 
 // This is where the guessing game begins
 alert('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
-playGuessingGameR(19,1);  // This is the recursive func method of the game
-//playGuessingGameCF(19);     // This uses a do..while loops to control flow instead
+// Enable one of these functions:
+//playGuessingGameR(19,1);  // This is the recursive func method of the game
+playGuessingGameCF(19);     // This uses a do..while loops to control flow instead
 
 // Array question
 // This uses a nested for loop, the i-loop for the 6 guesses, and
