@@ -99,8 +99,8 @@ if (userName == null || userName === '') {
 alert('Greetings, ' + userName + '.  Welcome to David\'s about me page');
 console.log('userName: ' + userName.toString());
 
-// Initial questions
-//question, answer, response arrays
+// --Initial questions
+// question, answer, response arrays
 var qArray = ['Does David have a dog?', 'Does David play a musical instrument?', 'Does David enjoy meatloaf?', 'Does David prefer mac to pc?','Does David hope to be a software developer?'];
 var aArray = ['N','Y','N','N','Y'];
 var rArray = ['Maybe someday when he has a yard.','He plays the guitar.','He hates the food and the band.','He prefers Windows or Linux.','He very much does.'];
@@ -113,7 +113,7 @@ for (var q = 0; q < qArray.length; q++) {
     answer = '';
     console.log('error, answer set to empty string for question' + q);
   }
-  // convert answer to single char to compare with aArray
+  // uniformity to compare with answers in aArray
   if ((answer === 'yes') || (answer === 'y') || (answer === 'yes.')) {
     answer = 'Y';
   } else if ((answer === 'no') || (answer === 'n') || (answer === 'no.')) {
@@ -121,7 +121,7 @@ for (var q = 0; q < qArray.length; q++) {
   } else {
     alert('Answer not understood.');
   }
-  // test the answer given vs the answer array
+  // test the answer given vs. the answer array (aArray)
   if (answer === aArray[q]) {
     alert('Correct.' + '  ' + rArray[q]);
     console.log(answer + ' ' + aArray);
@@ -134,13 +134,13 @@ for (var q = 0; q < qArray.length; q++) {
   }
 }
 
-// This is where the guessing game begins
+// --This is where the guessing game begins
 alert('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
 // Enable one of these functions:
 //playGuessingGameR(19,1);  // This is the recursive func method of the game
 playGuessingGameCF(19);     // This uses a do..while loops to control flow instead
 
-// Array question
+// --Array question
 // This uses a nested for loop, the i-loop for the 6 guesses, and
 // the j-loop for checking against each element in the array
 var answersArray = ['nc', 'il', 'north carolina', 'illinois'];
@@ -184,6 +184,7 @@ console.log('was array question correct? ' + arrayCorrect);
 console.log('tally is now ' + tally);
 console.log('ze final tally: ' + tally.toString() + ' out of 7');
 
+// --Final answers message
 if (tally > 2) {
   alert('You got ' + tally + ' out of 7 correct.  Nice work, ' + userName + '.');
 } else if (tally > 0){
