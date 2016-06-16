@@ -41,20 +41,18 @@ function playGuessingGameCF(num) {
       console.log('win');
     } else if (msg === 'less') {
       alert('Incorrect.  Too low.');
-      attempt++;
       console.log('low');
     } else if (msg === 'greater') {
       alert('Incorrect, too high.');
-      attempt++;
       console.log('high');
     } else {
       alert('I don\'t know what you said, but no');
-      attempt++;
       console.log('Strange input.');
     }
+    attempt++;
   }
   while (attempt <= 4);
-  if (attempt !== 100) {
+  if (attempt < 100) {
     alert('You lost.');
   }
 }
