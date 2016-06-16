@@ -99,86 +99,41 @@ if (userName == null || userName === '') {
 alert('Greetings, ' + userName + '.  Welcome to David\'s about me page');
 console.log('userName: ' + userName.toString());
 
-// This is where the initial questions begin
-try {
-  var answer1 = prompt('Does David have a dog?').toLowerCase();
-}
-catch(error) {
-  answer1 = '';
-  console.log('error, answer1 set to empty string');
-}
+// Initial questions
+//question, answer, response arrays
+var qArray = ['Does David have a dog?', 'Does David play a musical instrument?', 'Does David enjoy meatloaf?', 'Does David prefer mac to pc?','Does David hope to be a software developer?'];
+var aArray = ['N','Y','N','N','Y'];
+var rArray = ['Maybe someday when he has a yard.','He plays the guitar.','He hates the food and the band.','He prefers Windows or Linux.','He very much does.'];
 
-if ((answer1 === 'no') || (answer1 === 'no.') || (answer1 === 'n')) {
-  alert('Correct.');
-  tally++;
-  console.log('user entered: ' + answer1 + ', answer1 CORRECT, tally = ' + tally.toString());
-} else {
-  alert('Incorrect.  David has no dogs at this time, but would like one when he owns a house with a yard.');
-  console.log('user entered: ' + answer1 + ', answer1 incorrect, tally is ' + tally.toString());
-}
-
-try {
-  var answer2 = prompt('Does David play a musical instrument?').toLowerCase();
-}
-catch(error) {
-  answer2 = '';
-  console.log('error, answer2 set to empty string');
-}
-if ((answer2 === 'yes') || (answer2 === 'yes.') || (answer2 === 'y')) {
-  alert('Correct.  David plays guitar.');
-  tally++;
-  console.log('user entered: ' + answer2 + ', answer2 CORRECT, tally = ' + tally.toString());
-} else {
-  alert('Incorrect.  David plays guitar.');
-  console.log('user entered: ' + answer2 + ', answer2 incorrect, tally unchanged.');
-}
-
-try {
-  var answer3 = prompt('Does David enjoy meatloaf?').toLowerCase();
-}
-catch(error) {
-  answer3 = '';
-  console.log('error, answer3 set to empty string');
-}
-if ((answer3 === 'no') || (answer3 === 'no.') || (answer3 === 'n')) {
-  alert('Correct.');
-  tally++;
-  console.log('user entered: ' + answer3 + ', answer3 CORRECT, tally = ' + tally.toString());
-} else {
-  alert('Incorrect.  David actually hates meatloaf (the food AND the band!).');
-  console.log('user entered: ' + answer3 + ', answer3 incorrect, tally unchanged.');
-}
-
-try {
-  var answer4 = prompt('Does David prefer mac to pc?').toLowerCase();
-}
-catch(error) {
-  answer4 = '';
-  console.log('error, answer4 set to empty string');
-}
-if ((answer4 === 'no') || (answer4 === 'no.') || (answer4 === 'n')) {
-  alert('Correct.  David prefers Windows or even Linux.');
-  tally++;
-  console.log('user entered: ' + answer4 + ', answer4 CORRECT, tally = ' + tally.toString());
-} else {
-  alert('Incorrect.  David does not enjoy using a Macintosh.');
-  console.log('user entered: ' + answer4 + ', answer4 incorrect, tally unchanged.');
-}
-
-try {
-  var answer5 = prompt('Does David hope to be a software developer?').toLowerCase();
-}
-catch(error) {
-  answer5 = '';
-  console.log('error, answer5 set to empty string');
-}
-if ((answer5 === 'yes') || (answer5 === 'yes.') || (answer5 === 'y')) {
-  alert('Correct.');
-  tally++;
-  console.log('user entered: ' + answer5 + ', answer5 CORRECT, tally = ' + tally.toString());
-} else {
-  alert('Incorrect.  David very much wants to be a software developer.');
-  console.log('user entered: ' + answer5 + ', answer5 incorrect, tally unchanged.');
+for (var q = 0; q < qArray.length; q++) {
+  try {
+    var answer = prompt(qArray[q]).toLowerCase();  // Asks question
+  }
+  catch(error) {
+    answer = '';
+    console.log('error, answer set to empty string for question' + q);
+  }
+  // convert answer to single char to compare with aArray
+  if ((answer === 'yes') || (answer === 'y') || (answer === 'yes.')) {
+    answer = 'Y';
+  } else if ((answer === 'no') || (answer === 'n') || (answer === 'no.')) {
+    answer = 'N';
+  } else {
+    alert('Answer not understood.');
+  }
+  // test the answer given vs the answer array
+  if (answer === aArray[q]) {
+    alert('Correct.' + '  ' + rArray[q]);
+    console.log(answer);
+    console.log(aArray);
+    console.log('---');
+    tally++;
+  } else {
+    alert('Incorrect.' + '  ' + rArray[q]);
+    console.log(answer);
+    console.log(aArray);
+    console.log('---');
+  }
 }
 
 // This is where the guessing game begins
