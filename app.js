@@ -20,9 +20,9 @@ function cmpNumbers(num1, num2) {
   }
 }
 
-// This function uses control flow (CF), rather than a recursive function (below)
-// to play the guessing game.  num is the correct number coder wants matched.
-function playGuessingGameCF(num) {
+// This function uses logical control flow to play the guessing game.
+// num is the correct number coder wants matched.
+function playGuessingGame(num) {
   console.log('game started.');
   var attempt = 1;
   do {
@@ -57,39 +57,7 @@ function playGuessingGameCF(num) {
     alert('You lost.');
   }
 }
-/* Commented out to avoid bloat
-// This recursive function is for the guessing game.
-// testNum is the guess number, attempt is which attempt the user is on.
-function playGuessingGameR(testNum, attempt) {
-  if (attempt >= 5) {
-    alert('You are out of guesses.  So sorry.  I was looking for the number ' + testNum + '.');
-    return;
-  } else try {
-    var guess = prompt('What is your guess?');
-  }
-  catch(error) {
-    guess = '';
-    console.log('error, guess set to empty string');
-  }
 
-  if (guess === testNum.toString()) {
-    alert('Noiceburgers with awesome sauce!');
-    tally++;
-  } else if (guess > testNum) {
-    attempt++;
-    alert('You\'re a bit high.');
-    playGuessingGameR(testNum, attempt);
-  } else if (guess < testNum) {
-    attempt++;
-    alert('You\'re a bit low.');
-    playGuessingGameR(testNum, attempt);
-  } else {
-    attempt++;
-    alert('That was a strange guess.  Not it. Try again.');
-    playGuessingGameR(testNum, attempt);
-  }
-}
-*/
 // Let's get their name
 var userName = prompt('Identify yourself, human.');
 if (userName == null || userName === '') {
@@ -100,7 +68,7 @@ alert('Greetings, ' + userName + '.  Welcome to David\'s about me page');
 console.log('userName: ' + userName.toString());
 
 // --Initial questions
-// question, answer, response arrays
+// question, answer, and response arrays
 var qArray = ['Does David have a dog?', 'Does David play a musical instrument?', 'Does David enjoy meatloaf?', 'Does David prefer mac to pc?','Does David hope to be a software developer?'];
 var aArray = ['N','Y','N','N','Y'];
 var rArray = ['Maybe someday when he has a yard.','He plays the guitar.','He hates the food and the band.','He prefers Windows or Linux.','He very much does.'];
@@ -113,7 +81,7 @@ for (var q = 0; q < qArray.length; q++) {
     answer = '';
     console.log('error, answer set to empty string for question' + q);
   }
-  // uniformity to compare with answers in aArray
+  // Apply uniformity to compare with answers in aArray
   if ((answer === 'yes') || (answer === 'y') || (answer === 'yes.')) {
     answer = 'Y';
   } else if ((answer === 'no') || (answer === 'n') || (answer === 'no.')) {
@@ -136,11 +104,9 @@ for (var q = 0; q < qArray.length; q++) {
 
 // --This is where the guessing game begins
 alert('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
-// Enable one of these functions:
-//playGuessingGameR(19,1);  // This is the recursive func method of the game
-playGuessingGameCF(19);     // This uses a do..while loops to control flow instead
+playGuessingGame(19);
 
-// --Array question
+// --Array question 7
 // This uses a nested for loop, the i-loop for the 6 guesses, and
 // the j-loop for checking against each element in the array
 var answersArray = ['nc', 'il', 'north carolina', 'illinois'];
@@ -179,7 +145,6 @@ for (var k = 0; k < answersArray.length - 1; k++) {
 }
 answerString += answersArray[answersArray.length - 1];
 alert('Possible answers were: ' + answerString);
-
 console.log('was array question correct? ' + arrayCorrect);
 console.log('tally is now ' + tally);
 console.log('ze final tally: ' + tally.toString() + ' out of 7');
