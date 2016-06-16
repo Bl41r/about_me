@@ -10,7 +10,7 @@ var numToGuess = 19;  // number for the guessing game
 // This function uses logical control flow to play the guessing game.
 // num is the correct number coder wants matched.
 function playGuessingGame(num) {
-  console.log('game started.');
+  console.log('guessing game started.');
   var attempt = 1;
   do {
     try {
@@ -32,8 +32,8 @@ function playGuessingGame(num) {
       alert('Incorrect, too high.');
       console.log('high');
     } else {
-      alert('I don\'t know what you said, but no');
-      console.log('Strange input.');
+      alert('I don\'t know what you said, but no.');
+      console.log('strange input: ' + guess);
     }
     attempt++;
   }
@@ -43,7 +43,7 @@ function playGuessingGame(num) {
   }
 }
 
-//Let's get their name
+// --Get user name function
 function namePrompt() {
   userName = prompt('Identify yourself, human.');
   if (userName == null || userName === '') {
@@ -55,7 +55,7 @@ function namePrompt() {
   return userName;
 }
 
-// --Initial questions
+// --Initial questions 1 thru 5
 function questions1thru5(){
   // question, answer, and response arrays
   var qArray = ['Does David have a dog?', 'Does David play a musical instrument?', 'Does David enjoy meatloaf?', 'Does David prefer mac to pc?','Does David hope to be a software developer?'];
@@ -70,25 +70,28 @@ function questions1thru5(){
       answer = '';
       console.log('error, answer set to empty string for question' + q);
     }
-    // Apply uniformity to compare with answers in aArray
+    // Apply uniformity to compare with answers formatted in aArray
     if ((answer === 'yes') || (answer === 'y') || (answer === 'yes.')) {
       answer = 'Y';
     } else if ((answer === 'no') || (answer === 'n') || (answer === 'no.')) {
       answer = 'N';
     } else {
-      alert('Answer not understood.');
+      answer = 'U'; // U for unknown
+      alert('Please give a valid yes or no response');
+      q--; // ask question again
     }
-    // test the answer given vs. the answer array (aArray)
+    // test the answer given vs. the answer array
     if (answer === aArray[q]) {
       alert('Correct.' + '  ' + rArray[q]);
-      console.log(answer + ' ' + aArray);
-      console.log('---');
       tally++;
-    } else {
-      alert('Incorrect.' + '  ' + rArray[q]);
-      console.log(answer + ' ' + aArray);
-      console.log('---');
+    } else if (answer === 'U') {
+      // pass, loops back to ask same quesiton
     }
+      else {
+      alert('Incorrect.' + '  ' + rArray[q]);
+    }
+    console.log(answer + ' ' + aArray[q]);
+    console.log('---');
   }
 }
 // --Array question 7
@@ -99,7 +102,6 @@ function question7(){
   var arrayCorrect = false; //If they guess correctly, becomes true
   alert('Let\'s play another game.  You guess what other state I have lived in.');
   for (var i = 0; i < 6; i++) {
-    console.log('i = ' + i);
     if (arrayCorrect === true) {
       break; // Breaks from 'i-loop' if they got it right.
     } else {
@@ -114,18 +116,17 @@ function question7(){
         state = '';
       }
       for (var j = 0; j < answersArray.length; j++) {
-        console.log('j = ' + j);
         if (state === answersArray[j]) {  // if their guess was correct..
           tally++;
           alert('Nice Work!');
           arrayCorrect = true;
-          break; // Breaks from 'j-loop'
+          break; // Breaks from 'j-loop' (not necessary unless array gets huge)
         }
       }
     }
   }
 
-// This little do-da put the answersArray elements into a nice string separated by commas:
+// This little do-da put the answersArray elements into a legible string separated by commas:
   var answerString = '';
   for (var k = 0; k < answersArray.length - 1; k++) {
     answerString += answersArray[k] + ', ';
@@ -146,10 +147,10 @@ function reportScore(){
   }
 }
 
-//This is where we're asking all our questions now that they're in functions
+// Main program Loop
 var userName = namePrompt();
 questions1thru5();
-// --This is where the guessing game begins
+//--This is where the guessing game begins
 var playGame = confirm('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
 if (playGame) {
   playGuessingGame(numToGuess);
@@ -158,6 +159,4 @@ if (playGame) {
 }
 question7();
 reportScore();
-
-console.log('tally is now ' + tally);
 console.log('ze final tally: ' + tally.toString() + ' out of 7');
