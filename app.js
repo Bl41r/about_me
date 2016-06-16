@@ -7,20 +7,6 @@
 var tally = 0;  // Global var for number of questions correct
 var numToGuess = 19;  // number for the guessing game
 
-// simple comparison function, returns 'equal', 'less', 'greater', 'error'
-// made this so the application only runs the comparison once per try
-function cmpNumbers(num1, num2) {
-  if (num1 === num2) {
-    return 'equal';
-  } else if (num1 > num2) {
-    return 'greater';
-  } else if (num1 < num2) {
-    return 'less';
-  } else {
-    return 'error';
-  }
-}
-
 // This function uses logical control flow to play the guessing game.
 // num is the correct number coder wants matched.
 function playGuessingGame(num) {
@@ -34,17 +20,15 @@ function playGuessingGame(num) {
       guess = '';
       console.log('error, guess set to empty string');
     }
-    var msg = cmpNumbers(guess, num);
-    console.log('msg is ' + msg);
-    if (msg === 'equal') {
+    if (guess === num) {
       alert('Great, kid!  Don\'t get cocky.');
       tally++;
       attempt = 100;
       console.log('win');
-    } else if (msg === 'less') {
+    } else if (guess < num) {
       alert('Incorrect.  Too low.');
       console.log('low');
-    } else if (msg === 'greater') {
+    } else if (guess > num) {
       alert('Incorrect, too high.');
       console.log('high');
     } else {
@@ -69,9 +53,10 @@ function namePrompt() {
   alert('Greetings, ' + userName + '.  Welcome to David\'s about me page');
   console.log('userName: ' + userName.toString());
   return userName;
-};
+}
+
 // --Initial questions
-function questions1through5(){
+function questions1thru5(){
   // question, answer, and response arrays
   var qArray = ['Does David have a dog?', 'Does David play a musical instrument?', 'Does David enjoy meatloaf?', 'Does David prefer mac to pc?','Does David hope to be a software developer?'];
   var aArray = ['N','Y','N','N','Y'];
@@ -163,7 +148,7 @@ function reportScore(){
 
 //This is where we're asking all our questions now that they're in functions
 var userName = namePrompt();
-questions1through5();
+questions1thru5();
 // --This is where the guessing game begins
 var playGame = confirm('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
 if (playGame) {
