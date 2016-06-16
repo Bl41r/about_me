@@ -60,50 +60,52 @@ function playGuessingGame(num) {
 }
 
 //Let's get their name
-function getUserName(){
-  var userName = prompt('Identify yourself, human.');
+function namePrompt() {
+  userName = prompt('Identify yourself, human.');
   if (userName == null || userName === '') {
     //used == in case of undefined type since (null == undefined) is true
     userName = 'Mr./Ms. too-cool-to-enter-a-name';
   }
   alert('Greetings, ' + userName + '.  Welcome to David\'s about me page');
   console.log('userName: ' + userName.toString());
-}
+  return userName;
+};
 // --Initial questions
-// question, answer, and response arrays
-var qArray = ['Does David have a dog?', 'Does David play a musical instrument?', 'Does David enjoy meatloaf?', 'Does David prefer mac to pc?','Does David hope to be a software developer?'];
-var aArray = ['N','Y','N','N','Y'];
-var rArray = ['Maybe someday when he has a yard.','He plays the guitar.','He hates the food and the band.','He prefers Windows or Linux.','He very much does.'];
+function questions1through5(){
+  // question, answer, and response arrays
+  var qArray = ['Does David have a dog?', 'Does David play a musical instrument?', 'Does David enjoy meatloaf?', 'Does David prefer mac to pc?','Does David hope to be a software developer?'];
+  var aArray = ['N','Y','N','N','Y'];
+  var rArray = ['Maybe someday when he has a yard.','He plays the guitar.','He hates the food and the band.','He prefers Windows or Linux.','He very much does.'];
 
-for (var q = 0; q < qArray.length; q++) {
-  try {
-    var answer = prompt(qArray[q]).toLowerCase();  // Asks question
-  }
-  catch(error) {
-    answer = '';
-    console.log('error, answer set to empty string for question' + q);
-  }
-  // Apply uniformity to compare with answers in aArray
-  if ((answer === 'yes') || (answer === 'y') || (answer === 'yes.')) {
-    answer = 'Y';
-  } else if ((answer === 'no') || (answer === 'n') || (answer === 'no.')) {
-    answer = 'N';
-  } else {
-    alert('Answer not understood.');
-  }
-  // test the answer given vs. the answer array (aArray)
-  if (answer === aArray[q]) {
-    alert('Correct.' + '  ' + rArray[q]);
-    console.log(answer + ' ' + aArray);
-    console.log('---');
-    tally++;
-  } else {
-    alert('Incorrect.' + '  ' + rArray[q]);
-    console.log(answer + ' ' + aArray);
-    console.log('---');
+  for (var q = 0; q < qArray.length; q++) {
+    try {
+      var answer = prompt(qArray[q]).toLowerCase();  // Asks question
+    }
+    catch(error) {
+      answer = '';
+      console.log('error, answer set to empty string for question' + q);
+    }
+    // Apply uniformity to compare with answers in aArray
+    if ((answer === 'yes') || (answer === 'y') || (answer === 'yes.')) {
+      answer = 'Y';
+    } else if ((answer === 'no') || (answer === 'n') || (answer === 'no.')) {
+      answer = 'N';
+    } else {
+      alert('Answer not understood.');
+    }
+    // test the answer given vs. the answer array (aArray)
+    if (answer === aArray[q]) {
+      alert('Correct.' + '  ' + rArray[q]);
+      console.log(answer + ' ' + aArray);
+      console.log('---');
+      tally++;
+    } else {
+      alert('Incorrect.' + '  ' + rArray[q]);
+      console.log(answer + ' ' + aArray);
+      console.log('---');
+    }
   }
 }
-
 // --Array question 7
 // This uses a nested for loop, the i-loop for the 6 guesses, and
 // the j-loop for checking against each element in the array
@@ -158,8 +160,10 @@ function reportScore(){
     alert('You did not get a single question correct.  Either you did this on purpose, or you have awesomely terrible luck!');
   }
 }
-getUserName();
 
+//This is where we're asking all our questions now that they're in functions
+var userName = namePrompt();
+questions1through5();
 // --This is where the guessing game begins
 var playGame = confirm('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
 if (playGame) {
