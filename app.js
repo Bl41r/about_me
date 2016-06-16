@@ -4,7 +4,7 @@
 
 'use strict';
 
-var tally = 0;  // Global var for questions correct
+var tally = 0;  // Global var for number of questions correct
 
 //simple comparison function, returns 'equal', 'less', 'greater', 'error'
 function cmpNumbers(num1, num2) {
@@ -58,6 +58,7 @@ function playGuessingGameCF(num) {
     alert('You lost.');
   }
 }
+/* Commented out to avoid bloat
 // This recursive function is for the guessing game.
 // testNum is the guess number, attempt is which attempt the user is on.
 function playGuessingGameR(testNum, attempt) {
@@ -89,7 +90,7 @@ function playGuessingGameR(testNum, attempt) {
     playGuessingGameR(testNum, attempt);
   }
 }
-
+*/
 // Let's get their name
 var userName = prompt('Identify yourself, human.');
 if (userName == null || userName === '') {
