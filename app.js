@@ -1,4 +1,5 @@
-// This is the js file for my week1 201 lab 'about me' created on 6/14/16
+// This is the js file for my week1 201 lab 'about me' created on 6/14/16.
+// GitHub:  https://github.com/Bl41r/about_me
 // This app plays a game with a series of questions, a number guessing game,
 // and a question with multiple correct answers stored into an array
 
@@ -126,7 +127,7 @@ function question7(){
     }
   }
 
-// This little do-da put the answersArray elements into a legible string separated by commas:
+// This little do-da puts the answersArray elements into a legible string separated by commas:
   var answerString = '';
   for (var k = 0; k < answersArray.length - 1; k++) {
     answerString += answersArray[k] + ', ';
