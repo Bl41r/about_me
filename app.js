@@ -19,8 +19,8 @@ function cmpNumbers(num1, num2) {
   }
 }
 
-// This function uses control flow (CF), rather than a recursive function to play the guessing game.
-// num is the correct number you want matched.
+// This function uses control flow (CF), rather than a recursive function (below)
+// to play the guessing game.  num is the correct number coder wants matched.
 function playGuessingGameCF(num) {
   console.log('game started.');
   var attempt = 1;
@@ -48,7 +48,7 @@ function playGuessingGameCF(num) {
       attempt++;
       console.log('high');
     } else {
-      alert('No.');
+      alert('I don\'t know what you said, but no');
       attempt++;
       console.log('Strange input.');
     }
@@ -94,7 +94,7 @@ function playGuessingGameR(testNum, attempt) {
 // Let's get their name
 var userName = prompt('Identify yourself, human.');
 if (userName == null || userName === '') {
-  //used == in case of undefined type since null == undefined is true
+  //used == in case of undefined type since (null == undefined) is true
   userName = 'Mr./Ms. too-cool-to-enter-a-name';
 }
 alert('Greetings, ' + userName + '.  Welcome to David\'s about me page');
