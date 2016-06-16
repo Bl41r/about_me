@@ -5,6 +5,7 @@
 'use strict';
 
 var tally = 0;  // Global var for number of questions correct
+var numToGuess = 19;  // number for the guessing game
 
 // simple comparison function, returns 'equal', 'less', 'greater', 'error'
 // made this so the application only runs the comparison once per try
@@ -105,7 +106,7 @@ for (var q = 0; q < qArray.length; q++) {
 // --This is where the guessing game begins
 var playGame = confirm('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
 if (playGame) {
-  playGuessingGame(19);
+  playGuessingGame(numToGuess);
 } else {
   alert('Well, you\'re no fun.');
 }
