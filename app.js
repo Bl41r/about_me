@@ -124,14 +124,12 @@ for (var q = 0; q < qArray.length; q++) {
   // test the answer given vs the answer array
   if (answer === aArray[q]) {
     alert('Correct.' + '  ' + rArray[q]);
-    console.log(answer);
-    console.log(aArray);
+    console.log(answer + ' ' + aArray);
     console.log('---');
     tally++;
   } else {
     alert('Incorrect.' + '  ' + rArray[q]);
-    console.log(answer);
-    console.log(aArray);
+    console.log(answer + ' ' + aArray);
     console.log('---');
   }
 }
@@ -146,7 +144,7 @@ playGuessingGameCF(19);     // This uses a do..while loops to control flow inste
 // This uses a nested for loop, the i-loop for the 6 guesses, and
 // the j-loop for checking against each element in the array
 var answersArray = ['nc', 'il', 'north carolina', 'illinois'];
-var arrayCorrect = false; //If they guess correctly, goes to value of 1
+var arrayCorrect = false; //If they guess correctly, becomes true
 alert('Let\'s play another game.  You guess what other state I have lived in.');
 for (var i = 0; i < 6; i++) {
   console.log('i = ' + i);
