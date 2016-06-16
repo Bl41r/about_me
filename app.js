@@ -219,13 +219,12 @@ for (var i = 0; i < 6; i++) {
     }
   }
 }
-// This little do-da put the answersArray elements into a nice string separated by commas
+// This little do-da put the answersArray elements into a nice string separated by commas:
 var answerString = '';
 for (var k = 0; k < answersArray.length - 1; k++) {
   answerString += answersArray[k] + ', ';
 }
 answerString += answersArray[answersArray.length - 1];
-
 alert('Possible answers were: ' + answerString);
 
 console.log('was array question correct? ' + arrayCorrect);
