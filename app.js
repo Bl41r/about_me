@@ -6,7 +6,8 @@
 
 var tally = 0;  // Global var for number of questions correct
 
-//simple comparison function, returns 'equal', 'less', 'greater', 'error'
+// simple comparison function, returns 'equal', 'less', 'greater', 'error'
+// made this so the application only runs the comparison once per try
 function cmpNumbers(num1, num2) {
   if (num1 === num2) {
     return 'equal';
