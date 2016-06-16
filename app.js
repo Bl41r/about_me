@@ -103,8 +103,12 @@ for (var q = 0; q < qArray.length; q++) {
 }
 
 // --This is where the guessing game begins
-alert('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
-playGuessingGame(19);
+var playGame = confirm('Shall we play a game?  How about global thermonuclear war?  Just kidding.  I am thinking of a number between 1 and 20.  What number is it?  You have 4 attempts.');
+if (playGame) {
+  playGuessingGame(19);
+} else {
+  alert('Well, you\'re no fun.');
+}
 
 // --Array question 7
 // This uses a nested for loop, the i-loop for the 6 guesses, and
