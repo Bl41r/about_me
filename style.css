@@ -1,4 +1,7 @@
 /* Very crude at the  moment, trying to implement what I have made on paper */
+* {
+  outline: 1px dotted orange;
+}
 
 body {
   font-family: Courier, monospace;
@@ -21,6 +24,7 @@ h1, h2 {
 /* these are the major sections, like Bio, Education */
 .navlinks {
   color: #191170;
+  padding-top: 10px;
   margin-bottom: 0;
   font-size: 25px;
   font-weight: bold;
