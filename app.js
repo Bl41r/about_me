@@ -9,9 +9,9 @@ var tally = 0;  // Global var for number of questions correct
 var numToGuess = 19;  // number for the guessing game
 
 // This function uses logical control flow to play the guessing game.
-// num is the correct number coder wants matched.
+// num is the correct number the coder wants matched.
 function playGuessingGame(num) {
-  console.log('guessing game started.');
+  console.log('guessing game started');
   var attempt = 1;
   do {
     try {
@@ -126,7 +126,6 @@ function question7(){
       }
     }
   }
-
 // This little do-da puts the answersArray elements into a legible string separated by commas:
   var answerString = '';
   for (var k = 0; k < answersArray.length - 1; k++) {
