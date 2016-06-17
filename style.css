@@ -1,32 +1,46 @@
 /* Very crude at the  moment, trying to implement what I have made on paper */
 * {
   outline: 1px dotted orange;
+  margin: 0px;
 }
 
 body {
   font-family: Courier, monospace;
+  background-color: #90EE90;
+  margin: 0px;
 }
 
-h1, h2 {
-  margin: 0px;
-  font-size: 75%;
+h1 h2 {
+  margin: 50px;
 }
 
 /* this is the 'About Me' title */
-#header {
+.header {
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  position: fixed;
   text-align: center;
-  font-size: 50px;
+  font-size: 125%;
   color: #191170;
   background-color: #AFEEEE;
-  margin-top: 20px;
+  opacity: .75;
+}
+
+h1.top {
+  margin-top: 10px;
+}
+
+.main-section {
+  margin-top: 100px;
 }
 
 /* these are the major sections, like Bio, Education */
 .navlinks {
   color: #191170;
   padding-top: 10px;
-  margin-bottom: 0;
-  font-size: 25px;
+  margin: 0;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -42,8 +56,4 @@ h1, h2 {
 .info {
   margin: 0;
   max-width: 65%;
-}
-
-body {
-  background-color: #90EE90;
 }
