@@ -2,6 +2,7 @@
 * {
   outline: 1px dotted orange;
   margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -37,10 +38,11 @@ h1.top {
 
 /* these are the major sections, like Bio, Education */
 .navlinks {
+  display: inline;
   color: #191170;
   padding-top: 10px;
   margin: 0;
-  font-size: 20px;
+  font-size: 10px;
   font-weight: bold;
 }
 
