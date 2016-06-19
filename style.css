@@ -1,4 +1,4 @@
-/* Very crude at the  moment, trying to implement what I have made on paper */
+/* Master stylesheet kind of resetting here */
 * {
   outline: 1px dotted orange;
   margin: 0px;
@@ -6,13 +6,22 @@
 }
 
 body {
-  font-family: Courier, monospace;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
   background-color: #90EE90;
   margin: 0px;
+  padding: 0px;
 }
 
-h1 h2 {
-  margin: 50px;
+h1 h2 h3 h4 h5 h6 {
+  margin: 0px;
+  padding 0px;
+  font-weight: normal;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+/*-----------------------------------*/
+
+.top {
+  margin: 0px;
 }
 
 /* this is the 'About Me' title */
@@ -25,7 +34,8 @@ h1 h2 {
   font-size: 125%;
   color: #191170;
   background-color: #AFEEEE;
-  opacity: .75;
+  opacity: .9;
+  min-width: 285px;
 }
 
 h1.top {
@@ -34,9 +44,52 @@ h1.top {
 
 .main-section {
   margin-top: 100px;
+  max-width: 500px;
+  text-align: center;
+  max-width: 65%;
+  min-width: 300px;
+  text-align: center;
+  position: absolute;
+  float: left;
+  color: #191170;
 }
 
-/* these are the major sections, like Bio, Education */
+/* includes div for text and image */
+.body-document {
+  min-width: 600px;
+  position: relative;
+}
+
+#about_img {
+  margin-top: 100px;
+  position: absolute;
+  right: 10px;
+  min-width: 172px;
+  max-width: 30%;
+  height: auto;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.spacer {
+  height: 20px;
+}
+
+/* remedies the problem of dots/numbers not showing on lists */
+.show-nums {
+  display: inline-block;
+  padding-left: 30px;
+  margin-left: 30px;
+}
+
+.show-dots {
+  display: inline:block;
+  padding-left: 30px;
+  margin-left: 30px;
+}
+
+/* these are the major sections, like Bio, Education etc. at the top of the page */
 .navlinks {
   display: inline;
   color: #191170;
@@ -46,16 +99,8 @@ h1.top {
   font-weight: bold;
 }
 
-#about_img {
-  position: absolute;
-  right: 10px;
-  max-width: 30%;
-  height: auto;
-  border-radius: 50%;
-}
-
-/* This is for the information for each heading */
-.info {
-  margin: 0;
-  max-width: 65%;
+/* li direct child of ul with major-sections class */
+.major-sections > li {
+  font-weight: bold;
+  font-size: 24pt;
 }
