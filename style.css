@@ -44,8 +44,7 @@ h1.top {
 
 .main-section {
   margin-top: 100px;
-  width: 400px;
-  max-width: 400px;
+  max-width: 500px;
   text-align: center;
   max-width: 65%;
   min-width: 300px;
@@ -58,6 +57,7 @@ h1.top {
 /* includes div for text and image */
 .body-document {
   min-width: 600px;
+  max-width: 900px;
   position: relative;
 }
 
