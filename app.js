@@ -91,7 +91,7 @@ function questions1thru5(){
       alert('Correct.' + '  ' + rArray[q]);
       tally++;
     } else if (answer === 'U') {
-      // pass, loops back to ask same quesiton
+      // pass, loops back to ask same question
     }
       else {
       alert('Incorrect.' + '  ' + rArray[q]);
@@ -108,7 +108,7 @@ function question7(){
   var arrayCorrect = false; //If they guess correctly, becomes true
   alert('Let\'s play another game.  You guess what other state I have lived in.');
   for (var i = 0; i < 6; i++) {
-    if (arrayCorrect === true) {
+    if (arrayCorrect) {
       break; // Breaks from 'i-loop' if they got it right.
     } else {
       if (i > 0) {
